@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>nc</string>
+		<string>ngc</string>
+		<string>prg</string>
+		<string>mpf</string>
+		<string>gcode</string>
+	</array>
+	<key>name</key>
+	<string>G-code</string>
+	<key>patterns</key>
+	<array>
+		<!--G COMMANDS-->
+		<dict>
+			<key>comment</key>
+			<string>g commands</string>
+			<key>match</key>
+			<string>G\d+</string>
+			<key>name</key>
+			<string>support.variable</string>
+		</dict>
+		<!--M COMMANDS-->
+		<dict>
+			<key>comment</key>
+			<string>m commands</string>
+			<key>match</key>
+			<string>M\d+</string>
+			<key>name</key>
+			<string>support.constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>comments</string>
+			<key>match</key>
+			<string>\(.*\)</string>
+			<key>name</key>
+			<string>comment.line</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>flow control operators</string>
+			<key>match</key>
+			<string>( IF| THEN| AND| OR| WHILE| GOTO)</string>
+			<key>name</key>
+			<string>keyword.control</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>functions</string>
+			<key>match</key>
+			<string>(ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>comparison operators</string>
+			<key>match</key>
+			<string>(GT|LT|GE|LE|EQ)</string>
+			<key>name</key>
+			<string>keyword.operator</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>flow control locations</string>
+			<key>match</key>
+			<string>(?&lt;=GOTO|DO)\d+</string>
+			<key>name</key>
+			<string>markup.italic</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>variables</string>
+			<key>match</key>
+			<string>(#\d+)</string>
+			<key>name</key>
+			<string>variable.other</string>
+		</dict>
+
+		<!--alphaX-->
+		<dict>
+			<key>comment</key>
+			<string>positionX - alphaX component</string>
+			<key>match</key>
+			<string>(( X){1})(?=([\d\.-])*)</string>
+			<key>name</key>
+			<string>axis.X</string>
+		</dict>
+		<!--alphaY-->
+		<dict>
+			<key>comment</key>
+			<string>positionY - alphaY component</string>
+			<key>match</key>
+			<string>(( Y){1})(?=([\d\.-])*)</string>
+			<key>name</key>
+			<string>axis.Y</string>
+		</dict>		
+		<!--alphaZ-->
+		<dict>
+			<key>comment</key>
+			<string>positionZ - alphaZ component</string>
+			<key>match</key>
+			<string>(( Z){1})(?=([\d\.-])*)</string>
+			<key>name</key>
+			<string>axis.Z</string>
+		</dict>	
+		<!--alphaE-->
+		<dict>
+			<key>comment</key>
+			<string>positionE - alphaE component</string>
+			<key>match</key>
+			<string>(( E){1})(?=([\d\.-])*)</string>
+			<key>name</key>
+			<string>axis.E</string>
+		</dict>	
+
+		<!--arcI-->
+		<dict>
+			<key>comment</key>
+			<string>arc positionI</string>
+			<key>match</key>
+			<string>([ I])(?=([\d\.-])*)</string>
+			<key>name</key>
+			<string>markup.italicI</string>
+		</dict>
+		<!--arcJ-->
+		<dict>
+			<key>comment</key>
+			<string>arc positionJ</string>
+			<key>match</key>
+			<string>([ J])(?=([\d\.-])*)</string>
+			<key>name</key>
+			<string>markup.italicJ</string>
+		</dict>
+		<!--arcR_CENTER-->
+		<dict>
+			<key>comment</key>
+			<string>arc positionR</string>
+			<key>match</key>
+			<string>([ R])(?=([\d\.-])*)</string>
+			<key>name</key>
+			<string>markup.italicR</string>
+		</dict>		
+		<!--numX-->
+		<dict>
+			<key>comment</key>
+			<string>positionX</string>
+			<key>match</key>
+			<string>(?&lt;=[X])([\d\.-])*</string>
+			<key>name</key>
+			<string>constant.numX</string>
+		</dict>
+		<!--numY-->
+		<dict>
+			<key>comment</key>
+			<string>positionY</string>
+			<key>match</key>
+			<string>(?&lt;=[Y])([\d\.-])*</string>
+			<key>name</key>
+			<string>constant.numY</string>
+		</dict>
+		<!--numZ-->
+		<dict>
+			<key>comment</key>
+			<string>positionZ</string>
+			<key>match</key>
+			<string>(?&lt;=[Z])([\d\.-])*</string>
+			<key>name</key>
+			<string>constant.numZ</string>
+		</dict>
+		<!--numE-->
+		<dict>
+			<key>comment</key>
+			<string>positionE</string>
+			<key>match</key>
+			<string>(?&lt;=[E])([\d\.-])*</string>
+			<key>name</key>
+			<string>constant.numE</string>
+		</dict>
+		<!--numI-->
+		<dict>
+			<key>comment</key>
+			<string>positionI</string>
+			<key>match</key>
+			<string>(?&lt;=[I])([\d\.-])*</string>
+			<key>name</key>
+			<string>constant.numI</string>
+		</dict>		
+		<!--numJ-->
+		<dict>
+			<key>comment</key>
+			<string>positionJ</string>
+			<key>match</key>
+			<string>(?&lt;=[J])([\d\.-])*</string>
+			<key>name</key>
+			<string>constant.numJ</string>
+		</dict>
+		<!--numR_CENTER-->
+		<dict>
+			<key>comment</key>
+			<string>positionR_CENTER</string>
+			<key>match</key>
+			<string>(?&lt;=[R])([\d\.-])*</string>
+			<key>name</key>
+			<string>constant.numR</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>feeds &amp; speeds</string>
+			<key>match</key>
+			<string>(?&lt;= )[FS]([\d\.-])+</string>
+			<key>name</key>
+			<string>variable.parameter</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>O &amp; N numberes</string>
+			<key>match</key>
+			<string>([ON]([\d\.-])+)</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>brackets</string>
+			<key>match</key>
+			<string>(\[|\])</string>
+			<key>name</key>
+			<string>string.interpolated</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.iso6983</string>
+	<key>uuid</key>
+	<string>e6875107-21f9-449b-bbae-036db969b3d2</string>
+</dict>
+</plist>

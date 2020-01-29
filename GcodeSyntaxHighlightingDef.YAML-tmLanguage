@@ -1,0 +1,114 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: G-code
+scopeName: source.iso6983
+fileTypes: [eia,nc,ngc,prg,mpf,gcode]
+uuid: e6875107-21f9-449b-bbae-036db969b3d2
+
+patterns:
+- comment: g commands
+  name: support.variable
+  match: G\d+
+
+- comment: m commands
+  name: support.constant
+  match: M\d+
+
+- comment: comments
+  name: comment.line
+  match: \(.*\)
+
+- comment: flow control operators
+  name: keyword.control
+  match: ( IF| THEN| AND| OR| WHILE| GOTO)
+
+- comment: comparison operators
+  name: keyword.operator
+  match: (GT|LT|GE|LE|EQ)
+
+- comment: flow control operators - locations
+  name: markup.italic
+  match: (?<=GOTO|DO)\d+
+
+- comment: functions
+  name: support.function
+  match: (ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)
+
+- comment: variables
+  name: variable.other
+  match: (#\d+)
+
+- comment: positionX - alphaX component
+  name: axis.X
+  match: (( X){1})(?=([\d\.-])*)
+
+- comment: positionY - alphaY component
+  name: axis.Y
+  match: (( Y){1})(?=([\d\.-])*)
+
+- comment: positionZ - alphaZ component
+  name: axis.Z
+  match: (( Z){1})(?=([\d\.-])*)
+
+- comment: positionE - alphaE component
+  name: axis.E
+  match: (( E){1})(?=([\d\.-])*)
+
+
+- comment: positions - numeric component
+  name: constant.numeric
+  match: (?<=[XYZ])([\d\.-])*)
+
+- comment: positionX - numX component
+  name: constant.numX
+  match: (?<=[X])([\d\.-])*)
+
+- comment: positionY - numY component
+  name: constant.numY
+  match: (?<=[Y])([\d\.-])*)
+
+- comment: positionZ - numZ component
+  name: constant.numZ
+  match: (?<=[Z])([\d\.-])*)
+
+- comment: positionE - numE component
+  name: constant.numE
+  match: (?<=[E])([\d\.-])*)
+
+- comment: positionI - numI component
+  name: constant.numI
+  match: (?<=[I])([\d\.-])*)
+
+- comment: positionJ - numJ component
+  name: constant.numJ
+  match: (?<=[J])([\d\.-])*)
+
+- comment: positionR - numR_CENTER component
+  name: constant.numR
+  match: (?<=[R])([\d\.-])*)
+
+- comment: arc position I
+  name: markup.italicI
+  match: ([ I])(?=([\d\.-])*)
+
+- comment: arc position J
+  name: markup.italicJ
+  match: ([ J])(?=([\d\.-])*)
+
+- comment: arc position R_CENTER
+  name: markup.italicR
+  match: ([ R])(?=([\d\.-])*)
+
+
+- comment: feeds & speeds
+  name: variable.parameter
+  match: (?<= )[FS]([\d\.-])+
+
+- comment: O & N numberes
+  name: support.function
+  match: ([ON]([\d\.-])+)
+
+- comment: brackets
+  name: string.interpolated
+  match: (\[|\])
+...
