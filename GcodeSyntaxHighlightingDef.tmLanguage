@@ -32,55 +32,15 @@
 			<key>name</key>
 			<string>support.constant</string>
 		</dict>
+		<!--comments-->
 		<dict>
 			<key>comment</key>
 			<string>comments</string>
 			<key>match</key>
-			<string>\(.*\)</string>
+			<string>;(.*)</string>
 			<key>name</key>
 			<string>comment.line</string>
 		</dict>
-		<dict>
-			<key>comment</key>
-			<string>flow control operators</string>
-			<key>match</key>
-			<string>( IF| THEN| AND| OR| WHILE| GOTO)</string>
-			<key>name</key>
-			<string>keyword.control</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>functions</string>
-			<key>match</key>
-			<string>(ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)</string>
-			<key>name</key>
-			<string>support.function</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>comparison operators</string>
-			<key>match</key>
-			<string>(GT|LT|GE|LE|EQ)</string>
-			<key>name</key>
-			<string>keyword.operator</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>flow control locations</string>
-			<key>match</key>
-			<string>(?&lt;=GOTO|DO)\d+</string>
-			<key>name</key>
-			<string>markup.italic</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>variables</string>
-			<key>match</key>
-			<string>(#\d+)</string>
-			<key>name</key>
-			<string>variable.other</string>
-		</dict>
-
 		<!--alphaX-->
 		<dict>
 			<key>comment</key>
@@ -117,31 +77,30 @@
 			<key>name</key>
 			<string>axis.E</string>
 		</dict>	
-
-		<!--arcI-->
+		<!--alphaArcI-->
 		<dict>
 			<key>comment</key>
 			<string>arc positionI</string>
 			<key>match</key>
-			<string>([ I])(?=([\d\.-])*)</string>
+			<string>(( I){1})(?=([\d\.-])*)</string>
 			<key>name</key>
 			<string>markup.italicI</string>
 		</dict>
-		<!--arcJ-->
+		<!--alphaArcJ-->
 		<dict>
 			<key>comment</key>
 			<string>arc positionJ</string>
 			<key>match</key>
-			<string>([ J])(?=([\d\.-])*)</string>
+			<string>(( J){1})(?=([\d\.-])*)</string>
 			<key>name</key>
 			<string>markup.italicJ</string>
 		</dict>
-		<!--arcR_CENTER-->
+		<!--alphaArcR_CENTER-->
 		<dict>
 			<key>comment</key>
 			<string>arc positionR</string>
 			<key>match</key>
-			<string>([ R])(?=([\d\.-])*)</string>
+			<string>(( R){1})(?=([\d\.-])*)</string>
 			<key>name</key>
 			<string>markup.italicR</string>
 		</dict>		
@@ -208,6 +167,7 @@
 			<key>name</key>
 			<string>constant.numR</string>
 		</dict>
+		<!--Feeds and Speeds-->
 		<dict>
 			<key>comment</key>
 			<string>feeds &amp; speeds</string>
@@ -216,22 +176,69 @@
 			<key>name</key>
 			<string>variable.parameter</string>
 		</dict>
-		<dict>
+		<!-- O & N numbers (additional flow control) -->
+		<!--<dict>
 			<key>comment</key>
 			<string>O &amp; N numberes</string>
 			<key>match</key>
 			<string>([ON]([\d\.-])+)</string>
 			<key>name</key>
 			<string>support.function</string>
-		</dict>
-		<dict>
+		</dict>-->
+		<!-- brackets -->
+		<!--<dict>
 			<key>comment</key>
 			<string>brackets</string>
 			<key>match</key>
 			<string>(\[|\])</string>
 			<key>name</key>
 			<string>string.interpolated</string>
-		</dict>
+		</dict>-->
+				<!--flow control operators-->
+		<!--<dict>
+			<key>comment</key>
+			<string>flow control operators</string>
+			<key>match</key>
+			<string>( IF| THEN| AND| OR| WHILE| GOTO)</string>
+			<key>name</key>
+			<string>keyword.control</string>
+		</dict>-->
+		<!--functions-->
+		<!--<dict>
+			<key>comment</key>
+			<string>functions</string>
+			<key>match</key>
+			<string>(ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>-->
+		<!--comparison operators-->
+		<!--<dict>
+			<key>comment</key>
+			<string>comparison operators</string>
+			<key>match</key>
+			<string>(GT|LT|GE|LE|EQ)</string>
+			<key>name</key>
+			<string>keyword.operator</string>
+		</dict>-->
+		<!--flow control operators - locations-->
+		<!--<dict>
+			<key>comment</key>
+			<string>flow control locations</string>
+			<key>match</key>
+			<string>(?&lt;=GOTO|DO)\d+</string>
+			<key>name</key>
+			<string>markup.italic</string>
+		</dict>-->
+		<!--variables-->
+		<!--<dict>
+			<key>comment</key>
+			<string>variables</string>
+			<key>match</key>
+			<string>(#\d+)</string>
+			<key>name</key>
+			<string>variable.other</string>
+		</dict>-->
 	</array>
 	<key>scopeName</key>
 	<string>source.iso6983</string>

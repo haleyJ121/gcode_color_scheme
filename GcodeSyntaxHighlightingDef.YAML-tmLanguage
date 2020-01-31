@@ -1,42 +1,22 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
 name: G-code
-scopeName: source.iso6983
+scopeName: KES_GCODE_RGB_PARAMS (ISO 6983-based)
 fileTypes: [eia,nc,ngc,prg,mpf,gcode]
 uuid: e6875107-21f9-449b-bbae-036db969b3d2
 
 patterns:
-- comment: g commands
+- comment: g commands - alphanum component
   name: support.variable
   match: G\d+
 
-- comment: m commands
+- comment: m commands - alphanum component
   name: support.constant
   match: M\d+
 
 - comment: comments
   name: comment.line
-  match: \(.*\)
-
-- comment: flow control operators
-  name: keyword.control
-  match: ( IF| THEN| AND| OR| WHILE| GOTO)
-
-- comment: comparison operators
-  name: keyword.operator
-  match: (GT|LT|GE|LE|EQ)
-
-- comment: flow control operators - locations
-  name: markup.italic
-  match: (?<=GOTO|DO)\d+
-
-- comment: functions
-  name: support.function
-  match: (ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)
-
-- comment: variables
-  name: variable.other
-  match: (#\d+)
+  match: ;(.*\)
 
 - comment: positionX - alphaX component
   name: axis.X
@@ -53,7 +33,6 @@ patterns:
 - comment: positionE - alphaE component
   name: axis.E
   match: (( E){1})(?=([\d\.-])*)
-
 
 - comment: positions - numeric component
   name: constant.numeric
@@ -87,28 +66,50 @@ patterns:
   name: constant.numR
   match: (?<=[R])([\d\.-])*)
 
-- comment: arc position I
+- comment: arc position I - alpha component
   name: markup.italicI
-  match: ([ I])(?=([\d\.-])*)
+  match: (( I){1}))(?=([\d\.-])*)
 
-- comment: arc position J
+- comment: arc position J - alpha component
   name: markup.italicJ
-  match: ([ J])(?=([\d\.-])*)
+  match: (( J){1})(?=([\d\.-])*)
 
-- comment: arc position R_CENTER
+- comment: arc position R_CENTER - alpha component
   name: markup.italicR
-  match: ([ R])(?=([\d\.-])*)
+  match: (( R){1})(?=([\d\.-])*)
 
-
-- comment: feeds & speeds
+- comment: feeds & speeds - alphanum component
   name: variable.parameter
   match: (?<= )[FS]([\d\.-])+
 
-- comment: O & N numberes
+
+
+
+- comment: flow control operators (---NOT USED---)
+  name: keyword.control
+  match: ( IF| THEN| AND| OR| WHILE| GOTO)
+
+- comment: comparison operators (---NOT USED---)
+  name: keyword.operator
+  match: (GT|LT|GE|LE|EQ)
+
+- comment: flow control operators - locations (---NOT USED---)
+  name: markup.italic
+  match: (?<=GOTO|DO)\d+
+
+- comment: functions (---NOT USED---)
+  name: support.function
+  match: (ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)
+
+- comment: variables (---NOT USED---)
+  name: variable.other
+  match: (#\d+)
+
+- comment: O & N numbers  (---NOT USED---)
   name: support.function
   match: ([ON]([\d\.-])+)
 
-- comment: brackets
+- comment: brackets  (---NOT USED---)
   name: string.interpolated
   match: (\[|\])
 ...
