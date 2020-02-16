@@ -63,6 +63,18 @@
 				<string></string>
 			</dict>
 		</dict>
+		<!--layer-->
+		<dict>
+			<key>name</key>
+			<string>Number</string>
+			<key>scope</key>
+			<string>comment.layer</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#815CBE</string>
+			</dict>
+		</dict>
 		<!--comments-->
 		<dict>
 			<key>name</key>
@@ -147,7 +159,7 @@
 				<string>#FFB3D9</string>
 			</dict>
 		</dict>
-		<!--numR_CENTER-->
+		<!--numR-->
 		<dict>
 			<key>name</key>
 			<string>Number</string>
@@ -164,7 +176,7 @@
 			<key>name</key>
 			<string>Function argument</string>
 			<key>scope</key>
-			<string>variable.parameter</string>
+			<string>feedrate.parameter</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -192,7 +204,7 @@
 			<key>name</key>
 			<string>Library constant</string>
 			<key>scope</key>
-			<string>support.variable</string>
+			<string>command.geometric</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -206,7 +218,7 @@
 			<key>name</key>
 			<string>Library constant</string>
 			<key>scope</key>
-			<string>support.constant</string>
+			<string>command.misc</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -215,6 +227,7 @@
 				<string>#6be5fd</string>
 			</dict>
 		</dict>
+		<!--alphaX-->
 		<dict>
 			<key>name</key>
 			<string>Markup: bold</string>
@@ -299,7 +312,7 @@
 				<string>#FF80BF</string>
 			</dict>
 		</dict>
-		<!--alphaArcR_CENTER-->
+		<!--alphaArcR-->
 		<dict>
 			<key>name</key>
 			<string>Markup: italic</string>

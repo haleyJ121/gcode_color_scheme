@@ -6,14 +6,20 @@ fileTypes: [eia,nc,ngc,prg,mpf,gcode]
 uuid: e6875107-21f9-449b-bbae-036db969b3d2
 
 patterns:
+
 - comment: g commands - alphanum component
-  name: support.variable
+  name: command.geometric
   match: G\d+
 
 - comment: m commands - alphanum component
-  name: support.constant
+  name: command.misc
   match: M\d+
 
+
+- comment: layer
+  name: callout.layer
+  match: (;LAYER:)\d+
+  
 - comment: comments
   name: comment.line
   match: ;(.*\)
@@ -33,10 +39,6 @@ patterns:
 - comment: positionE - alphaE component
   name: axis.E
   match: (( E){1})(?=([\d\.-])*)
-
-- comment: positions - numeric component
-  name: constant.numeric
-  match: (?<=[XYZ])([\d\.-])*)
 
 - comment: positionX - numX component
   name: constant.numX
@@ -62,7 +64,7 @@ patterns:
   name: constant.numJ
   match: (?<=[J])([\d\.-])*)
 
-- comment: positionR - numR_CENTER component
+- comment: positionR - numR component
   name: constant.numR
   match: (?<=[R])([\d\.-])*)
 
@@ -74,15 +76,13 @@ patterns:
   name: markup.italicJ
   match: (( J){1})(?=([\d\.-])*)
 
-- comment: arc position R_CENTER - alpha component
+- comment: arc position R - alpha component
   name: markup.italicR
   match: (( R){1})(?=([\d\.-])*)
 
 - comment: feeds & speeds - alphanum component
-  name: variable.parameter
+  name: feedrate.parameter
   match: (?<= )[FS]([\d\.-])+
-
-
 
 
 - comment: flow control operators (---NOT USED---)

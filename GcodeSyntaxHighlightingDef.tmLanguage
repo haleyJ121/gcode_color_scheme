@@ -21,7 +21,7 @@
 			<key>match</key>
 			<string>G\d+</string>
 			<key>name</key>
-			<string>support.variable</string>
+			<string>command.geometric</string>
 		</dict>
 		<!--M COMMANDS-->
 		<dict>
@@ -30,7 +30,16 @@
 			<key>match</key>
 			<string>M\d+</string>
 			<key>name</key>
-			<string>support.constant</string>
+			<string>command.misc</string>
+		</dict>
+		<!--layer-->
+		<dict>
+			<key>comment</key>
+			<string>layerCount</string>
+			<key>match</key>
+			<string>(;LAYER:)\d+</string>
+			<key>name</key>
+			<string>comment.layer</string>
 		</dict>
 		<!--comments-->
 		<dict>
@@ -158,23 +167,23 @@
 			<key>name</key>
 			<string>constant.numJ</string>
 		</dict>
-		<!--numR_CENTER-->
+		<!--numR-->
 		<dict>
 			<key>comment</key>
-			<string>positionR_CENTER</string>
+			<string>positionR</string>
 			<key>match</key>
 			<string>(?&lt;=[R])([\d\.-])*</string>
 			<key>name</key>
 			<string>constant.numR</string>
 		</dict>
-		<!--Feeds and Speeds-->
+		<!--feeds & speeds-->
 		<dict>
 			<key>comment</key>
 			<string>feeds &amp; speeds</string>
 			<key>match</key>
 			<string>(?&lt;= )[FS]([\d\.-])+</string>
 			<key>name</key>
-			<string>variable.parameter</string>
+			<string>feedrate.parameter</string>
 		</dict>
 		<!-- O & N numbers (additional flow control) -->
 		<!--<dict>
